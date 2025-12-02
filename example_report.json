@@ -1,0 +1,65 @@
+{
+  "target": "https://example.com",
+  "scan_time": "2025-12-02T15:30:00",
+  "ssl_analysis": {
+    "status": "SECURE",
+    "protocol": "TLSv1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "cipher_strength": 256,
+    "issuer": {
+      "countryName": "US",
+      "organizationName": "DigiCert Inc",
+      "commonName": "DigiCert TLS RSA SHA256 2020 CA1"
+    },
+    "subject": {
+      "countryName": "US",
+      "stateOrProvinceName": "California",
+      "localityName": "Los Angeles",
+      "organizationName": "Internet Corporation for Assigned Names and Numbers",
+      "commonName": "www.example.org"
+    },
+    "valid_from": "Nov 13 00:00:00 2024 GMT",
+    "valid_until": "Dec 12 23:59:59 2025 GMT"
+  },
+  "security_headers": {
+    "headers": {
+      "Strict-Transport-Security": "max-age=31536000",
+      "Content-Security-Policy": "MISSING",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff",
+      "X-XSS-Protection": "MISSING",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "MISSING"
+    },
+    "score": "4/7",
+    "grade": "C"
+  },
+  "port_scan": {
+    "total_scanned": 9,
+    "open_ports": [
+      {
+        "port": 80,
+        "status": "OPEN",
+        "service": "HTTP"
+      },
+      {
+        "port": 443,
+        "status": "OPEN",
+        "service": "HTTPS"
+      }
+    ],
+    "open_count": 2
+  },
+  "dns_security": {
+    "SPF": "CONFIGURED",
+    "DMARC": "CONFIGURED",
+    "DNSSEC": "DISABLED"
+  },
+  "vulnerabilities": [
+    {
+      "type": "XSS",
+      "severity": "HIGH",
+      "description": "Missing Content-Security-Policy - increased XSS risk"
+    }
+  ]
+}
